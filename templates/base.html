@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мої улюблені місця{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="{% url 'home' %}">Мої улюблені місця</a></h1>
+            <ul>
+                <li><a href="{% url 'home' %}">Головна</a></li>
+                <li><a href="{% url 'places_list' %}">Список місць</a></li>
+                <li><a href="{% url 'add_place' %}"> Додати місце</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>made by Vieronika Koliesnikova, the 2nd year SE student. 09/2025 </p>
+    </footer>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

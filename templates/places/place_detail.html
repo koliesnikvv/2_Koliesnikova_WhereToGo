@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="place-detail">
+        <div class="place-image">
+           <img src="{{ place.get_image_url }}" alt="{{ place.name }}">
+        </div>
+        <h1>{{ place.name }}</h1>
+        <div class="place-info">
+            <p><strong>Тип:</strong> {{ place.get_place_type_display }}</p>
+            <p><strong>Локація:</strong> {% if place.location %}{{ place.location }}{% else %}Secret place{% endif %}</p>
+            <p><strong>Рейтинг:</strong> {{ place.get_star_rating }}</p>
+            <p><strong>Додано:</strong> {{ place.created_at|date:"d.m.Y H:i" }}</p>
+        </div>
+        <div class="description">
+            <h3>Опис:</h3>
+            <p>{{ place.description }}</p>
+        </div>
+        <div class="actions">
+            <a href="{% url 'places_list' %}" class="btn-secondary">Переглянути список усіх доступних місць</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

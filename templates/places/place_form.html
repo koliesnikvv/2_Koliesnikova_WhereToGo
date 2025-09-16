@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Додати нове місце</h1>
+
+    <form method="post" class="place-form">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <div class="error">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="button_rand">Додати місце</button>
+        <a href="{% url 'places_list' %}" class="btn-secondary">Скасувати</a>
+    </form>
+</div>
+{% endblock %}

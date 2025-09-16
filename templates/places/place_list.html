@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>Список моїх улюблених місць</h1>
+
+    {% if places %}
+    <div class="places-grid">
+        {% for place in places %}
+        <div class="place-card">
+            <div class="place-image">
+               <img src="{{ place.get_image_url }}" alt="{{ place.name }}">
+            </div>
+            <h3><a href="{% url 'place_detail' place.id %}">{{ place.name }}</a></h3>
+            <p class="description">{{ place.preview_description }}</p>
+            <p class="type"><strong>Тип:</strong> {{ place.get_place_type_display }}</p>
+            <p class="location"><strong>Локація:</strong> {% if place.location %}{{ place.location }}{% else %}Secret place{% endif %}</p>
+            <p class="rating"><strong>Рейтинг:</strong> {{ place.get_star_rating }}</p>
+            <p class="date"><strong>Додано:</strong> {{ place.created_at|date:"d.m.Y" }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="no-places">У вас ще немає доданих місць. <a href="{% url 'add_place' %}">Додайте перше місце!</a></p>
+    {% endif %}
+</div>
+{% endblock %}

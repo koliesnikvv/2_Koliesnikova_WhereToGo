@@ -1,0 +1,20 @@
+<div class="random-place-result">
+    <h3>Сьогодні йдемо сюди!</h3>
+
+    <div class="place-card large">
+        <img src="{% if place.image %}{{ place.image.url }}{% else %}{% static 'images/default-place.jpg' %}{% endif %}"
+             alt="{{ place.name }}" class="place-image">
+
+        <h3>{{ place.name }}</h3>
+
+        <div class="place-details">
+            <span class="type"> {{ place.get_place_type_display }}</span>
+            <span class="location">{% if place.location %}{{ place.location }}{% else %}Secret place{% endif %}</span>
+            <span class="rating">{{ place.get_star_rating }}</span>
+        </div>
+
+        <p class="description">{{ place.description }}</p>
+
+        <a href="{% url 'place_detail' place.pk %}" class="btn-secondary">Детальніше</a>
+    </div>
+</div>

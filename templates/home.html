@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <section class="welcome-section">
+        <h2>Рандомайзер з моїх улюблених місць!</h2>
+        <p>Натисніть кнопку, щоб дізнатися, куди піти сьогодні!</p>
+    </section>
+
+    <section class="random-section">
+        <form method="get" action="{% url 'home' %}">
+            <input type="hidden" name="randomize" value="true">
+            <button type="submit" class="button_rand">Куди піти?</button>
+        </form>
+
+        {% if random_place %}
+        <div class="place-preview">
+            {% if random_place.get_image_url %}
+            <div class="place-image">
+                <img src="{{ random_place.get_image_url }}" alt="{{ random_place.name }}">
+            </div>
+            {% endif %}
+            <h3>Пропозиція: <a href="{% url 'place_detail' random_place.id %}" class="place-title-link">
+                    {{ random_place.name }}
+                </a>
+            </h3>
+            <p><strong>Тип:</strong> {{ random_place.get_place_type_display }}</p>
+            <p><strong>Локація:</strong>
+                {% if random_place.location %}
+                    {{ random_place.location }}
+                {% else %}
+                    Secret place
+                {% endif %}
+            </p>
+            <p><strong>Рейтинг:</strong> {{ random_place.get_star_rating }}</p>
+            <p><strong>Опис:</strong> {{ random_place.description }}</p>
+        </div>
+        {% elif request.GET.randomize %}
+        <div class="no-places">
+            <p>Немає місць для вибору. <a href="{% url 'add_place' %}">Додайте перше місце!</a></p>
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

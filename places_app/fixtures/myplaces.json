@@ -1,0 +1,89 @@
+[
+{
+    "model": "places_app.place",
+    "fields": {
+        "name": "o'cake",
+        "description": "моя улюблена кав'ярня в місті Вінниця. коли  приїжджаю додому, то завжди ходжу саме туди. там найсмачніша кава й десерти",
+        "place_type": "cafe",
+        "location": "вул. Соборна, 66",
+        "rating": 5,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+{
+    "model": "places_app.place",
+    "fields": {
+        "name": "120",
+        "description": "улюблена кав'ярня біля університету. найсмачніший фільтр",
+        "place_type": "cafe",
+        "location": "вул. Іллінська, 12",
+        "rating": 5,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+{
+    "model": "places_app.place", 
+    "fields": {
+        "name": "володимирська гірка",
+        "description": "парк на пагорбах Києва, з якого видно весь лівий берег і Поділ. любила сюди приходити, коли жила в центрі",
+        "place_type": "park",
+        "location": null,
+        "rating": 3,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+{
+    "model": "places_app.place",
+    "fields": {
+        "name": "ст. метро Арсенальна",
+        "description": "просто подобається, бо найглибша станція метро в Україні (на жаль, уже не світу, бо десь у Китаї є глибше метро)",
+        "place_type": "other",
+        "location": "ст. метро Арсенальна",
+        "rating": 4,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+{
+    "model": "places_app.place",
+    "fields": {
+        "name": "жовтень",
+        "description": "кінотеатр на Подолі, де я подивилась справді хороші фільми. люблю сквер біля кінотеару",
+        "place_type": "cinema", 
+        "location": "вул. Кирилівська (або ні, не пам'ятаю)",
+        "rating": 2,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+{
+    "model": "places_app.place",
+    "fields": {
+        "name": "наукма",
+        "description": "мій університет. прикольно тут",
+        "place_type": "other",
+        "location": "вул. Сковороди",
+        "rating": 4,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},
+  {
+    "model": "places_app.place",
+    "fields": {
+        "name": "сенс",
+        "description": "моя улюблена книгарня в Києві. тут можна і попрацювати, і каву попити, і книги придбати",
+        "place_type": "other",
+        "location": "вул. Хрещатик",
+        "rating": 3,
+        "created_at": "2025-09-16T21:00:00"
+    }
+},{
+    "model": "places_app.place",
+    "fields": {
+        "name": "парк дружби народів",
+        "description": "коли жтла у Вінниці, то часто приходила сюди відпочити. а влітку біля озера можна позасмагати",
+        "place_type": "park",
+        "location": null,
+        "rating": 1,
+        "created_at": "2025-09-16T21:00:00"
+    }
+}
+]
